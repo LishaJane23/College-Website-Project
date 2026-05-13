@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Events - St. Aloysius College</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+    }
+    .container {
+        width: 90%;
+        margin: auto;
+        padding: 20px;
+    }
+    h1 {
+        text-align: center;
+        color: maroon;
+    }
+    .event-description {
+        text-align: justify;
+        margin-bottom: 20px;
+    }
+    /* Slider Styles */
+    .slider {
+        position: relative;
+        max-width: 100%;
+        margin: auto;
+        overflow: hidden;
+    }
+    .slides {
+        display: flex;
+        width: 300%;
+        animation: slide 12s infinite;
+    }
+    .slides img {
+        width: 100%;
+        border-radius: 5px;
+    }
+    @keyframes slide {
+        0% {transform: translateX(0);}
+        33% {transform: translateX(-100%);}
+        66% {transform: translateX(-200%);}
+        100% {transform: translateX(0);}
+    }
+    /* Event Sections */
+    .event-section {
+        margin-top: 20px;
+    }
+    .event-section h3 {
+        color: #444;
+        margin-bottom: 5px;
+    }
+    iframe {
+        width: 100%;
+        height: 400px;
+        margin-top: 20px;
+        border-radius: 8px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>College Events</h1>
+
+    <p class="event-description">
+        St. Aloysius (Deemed to be University) hosts a wide range of events throughout the academic year
+        that foster community, creativity, and learning. From academic seminars to cultural festivals and
+        sports competitions, these events enrich student life and encourage participation from both undergraduate
+        and postgraduate students. These events provide students with opportunities to showcase talents,
+        engage with peers, and grow intellectually and socially.
+    </p>
+
+    <!-- Image Slider -->
+    <div class="slider">
+        <div class="slides">
+            <img src="event1.jpg" alt="Aloysian Fest">
+            <img src="event2.jpg" alt="Sports Day">
+            <img src="event3.jpg" alt="Cultural Program">
+        </div>
+    </div>
+
+    <!-- Event Sections -->
+    <div class="event-section">
+        <h3>Cultural Events</h3>
+        <p><b>Aloysian Fest:</b> A national-level undergraduate fest with competitions and performances.</p>
+        <p><b>Sangam:</b> Showcasing postgraduate student talents through drama, dance, and music.</p>
+        <p><b>Luminaire:</b> French Fest with quizzes, fashion shows, open mics, food stalls, and games.</p>
+    </div>
+
+    <div class="event-section">
+        <h3>Academic & Awareness Programs</h3>
+        <p><b>Metanoia:</b> Seminar addressing child trafficking awareness and social responsibility.</p>
+        <p><b>CPR Training:</b> Training for non-teaching staff to promote campus safety.</p>
+    </div>
+
+    <div class="event-section">
+        <h3>Sports & Fitness</h3>
+        <p><b>Sports Day:</b> Annual athletic meet with track and field competitions promoting physical fitness.</p>
+    </div>
+
+    <div class="event-section">
+        <h3>Social & Community Engagement</h3>
+        <p>Blood donation camps, awareness drives, and community services strengthening civic engagement.</p>
+    </div>
+
+    <!-- Event Highlights Video -->
+    <h3>Event Highlights (Videos)</h3>
+    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+</div>
+
+</body>
+</html>

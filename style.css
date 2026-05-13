@@ -1,0 +1,99 @@
+/* Reset & Base Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+header {
+  background-color: #003366;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items: center;
+}
+
+.logo img {
+  height: 70px;
+  vertical-align: middle;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.logo p {
+  margin: 0;
+  font-size: 0.8em;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.login-btn, .signup-btn {
+  background-color: #0066cc;
+  border: none;
+  padding: 5px 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.signup-btn {
+  background-color: #0066cc;
+  color: white;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.9;
+}
+
+.hero h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 3em;
+  text-shadow: 2px 2px 4px #000;
+}
+
+.about {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.about h3 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+

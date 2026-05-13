@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programs Offered - St. Aloysius College</title>
+<style>
+  body {
+  font-family: Arial, sans-serif;
+  background: url('college.png') no-repeat center center fixed;
+  background-size: cover;
+  padding: 20px;
+}
+
+  h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: maroon;
+  font-size: 26px;
+}
+
+  .back-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    margin-bottom: 15px;
+    background-color: maroon;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.3s;
+  }
+  .back-btn:hover {
+    background-color: #a00000;
+  }
+  .program-section {
+    background: white;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .program-header {
+    background: maroon;
+    color: white;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .program-header:hover {
+    background: #a00000;
+  }
+  .program-content {
+    display: none;
+    padding: 10px;
+    background: #fff;
+  }
+  .program {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  .program img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Back Button -->
+<a href="index.html" class="back-btn" onclick="history.back()">← Back</a>
+
+<h2>Programs Offered</h2>
+
+<!-- Undergraduate Programs -->
+<div class="program-section">
+  <div class="program-header">Bachelor of Arts (BA) ▼</div>
+  <div class="program-content">
+    <div class="program">
+      <img src="BA.png" alt="BA Program">
+      <ul>
+        <li>BA in Psychology</li>
+        <li>BA in Economics</li>
+        <li>BA in Journalism</li>
+        <li>BA in English Literature</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="program-section">
+  <div class="program-header">Bachelor of Science (BSc) ▼</div>
+  <div class="program-content">
+    <div class="program">
+      <img src="BSC.png" alt="BSc Program">
+      <ul>
+        <li>BSc in Mathematics</li>
+        <li>BSc in Physics</li>
+        <li>BSc in Chemistry</li>
+        <li>BSc in Computer Science</li>
+        <li>BSc in Biotechnology</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="program-section">
+  <div class="program-header">Bachelor of Commerce (BCom) ▼</div>
+  <div class="program-content">
+    <div class="program">
+      <img src="BCOM.png" alt="BCom Program">
+      <ul>
+        <li>BCom in General</li>
+        <li>BCom in Finance</li>
+        <li>BCom in Marketing</li>
+        <li>BCom in Business Analytics</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="program-section">
+  <div class="program-header">Bachelor of Computer Application (BCA) ▼</div>
+  <div class="program-content">
+    <div class="program">
+      <img src="BCA.png" alt="BCA Program">
+      <ul>
+        <li>BCA in General</li>
+        <li>BCA in Finance</li>
+        <li>BCA in Marketing</li>
+        <li>BCA in Business Analytics</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Postgraduate Programs -->
+<div class="program-section">
+  <div class="program-header">Master of Arts (MA) ▼</div>
+  <div class="program-content">
+    <div class="program">
+      <img src="MA.png" alt="MA Program">
+      <ul>
+        <li>MA in English Literature</li>
+        <li>MA in Economics</li>
+        <li>MA in Journalism</li>
+        <li>MA in Psychology</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="program-section">
+  <div class="program-header">Master of Commerce (MCom) ▼</div>
+  <div class="program-content">
+    <div class="program">
+      <img src="MCOM.png" alt="MCom Program">
+      <ul>
+        <li>MCom in General</li>
+        <li>MCom in Finance</li>
+        <li>MCom in Marketing</li>
+        <li>MCom in Business Analytics</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  document.querySelectorAll(".program-header").forEach(header => {
+    header.addEventListener("click", () => {
+      const content = header.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Events</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+    }
+    h2 {
+        text-align: center;
+        margin: 20px 0;
+    }
+    .container {
+        width: 90%;
+        margin: auto;
+    }
+
+    /* Slider Styles */
+    .slider {
+        position: relative;
+        max-width: 50%;
+        height: 50%;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+    .slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+    .slides img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+    .slider-buttons {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+    }
+    .slider-buttons button {
+        background-color: rgba(0,0,0,0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+    .dots {
+        text-align: center;
+        margin-top: 10px;
+    }
+    .dots span {
+        display: inline-block;
+        height: 10px;
+        width: 10px;
+        background-color: #bbb;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+    .dots .active {
+        background-color: #717171;
+    }
+</style>
+</head>
+<body>
+<!-- Unique Header -->
+<header class="event-header">
+    <button class="back-btn" onclick="history.back()">
+        &#8592;
+    </button>
+    <h1>College Events</h1>
+</header>
+
+<style>
+    .event-header {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(90deg, #3b82f6, #06b6d4);
+        padding: 15px 20px;
+        color: white;
+        font-family: 'Segoe UI', sans-serif;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .event-header h1 {
+        font-size: 22px;
+        margin: 0;
+        position: relative;
+    }
+
+    .event-header h1::after {
+        content: '';
+        display: block;
+        width: 50%;
+        height: 3px;
+        background: white;
+        margin: 4px auto 0;
+        border-radius: 2px;
+    }
+
+    .back-btn {
+        position: absolute;
+        left: 15px;
+        background: rgba(255,255,255,0.2);
+        border: none;
+        color: white;
+        font-size: 20px;
+        padding: 5px 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .back-btn:hover {
+        background: rgba(255,255,255,0.35);
+    }
+</style>
+
+<div class="container">
+    <p>
+        St. Aloysius (Deemed to be University) hosts a wide range of events throughout the academic year that foster community, creativity, and learning. 
+        From academic seminars to cultural festivals and sports competitions, these events enrich student life and encourage participation from both undergraduate and postgraduate students...
+    </p>
+
+    <!-- IMAGE SLIDER -->
+    <div class="slider" id="slider">
+        <div class="slides" id="slides">
+            <img src="event1.png" alt="Event 1">
+            <img src="event2.png" alt="Event 2">
+            <img src="event3.png" alt="Event 3">
+        </div>
+        <div class="slider-buttons">
+            <button id="prev">&#10094;</button>
+            <button id="next">&#10095;</button>
+        </div>
+        <div class="dots" id="dots"></div>
+    </div>
+
+    <h3>Cultural Events</h3>
+    <p><strong>Aloysian Fest:</strong> A national-level undergraduate fest featuring a variety of competitions and performances...</p>
+    <p><strong>Sangam:</strong> An inter-departmental extravaganza showcasing talents of postgraduate students...</p>
+    <p><strong>Luminaire:</strong> A vibrant French Fest that includes quizzes, fashion shows, open mic, food stalls, and more...</p>
+
+    <h3>Academic & Awareness Programs</h3>
+    <p><strong>Metanoia:</strong> National seminar addressing issues like child trafficking...</p>
+    <p><strong>CPR Training:</strong> A safety-focused event that provides staff with CPR skills...</p>
+
+    <h3>Sports & Fitness</h3>
+    <p><strong>Sports Day:</strong> Annual athletic event where students from all departments participate...</p>
+
+    <h3>Social & Community Engagement</h3>
+    <p>The student council organizes blood donation camps, awareness drives, and community service programs...</p>
+</div>
+
+<script>
+    const slides = document.getElementById('slides');
+    const dotsContainer = document.getElementById('dots');
+    const images = document.querySelectorAll('#slides img');
+    let index = 0;
+    let interval = setInterval(nextSlide, 3000);
+
+    function showSlide(i) {
+        if (i >= images.length) index = 0;
+        if (i < 0) index = images.length - 1;
+        slides.style.transform = `translateX(${-index * 100}%)`;
+        updateDots();
+    }
+
+    function nextSlide() {
+        index++;
+        showSlide(index);
+    }
+
+    function prevSlide() {
+        index--;
+        showSlide(index);
+    }
+
+    function updateDots() {
+        document.querySelectorAll('.dots span').forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+    }
+
+    document.getElementById('next').addEventListener('click', () => {
+        nextSlide();
+        resetTimer();
+    });
+    document.getElementById('prev').addEventListener('click', () => {
+        prevSlide();
+        resetTimer();
+    });
+
+    function resetTimer() {
+        clearInterval(interval);
+        interval = setInterval(nextSlide, 3000);
+    }
+
+    // Create dots
+    images.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.addEventListener('click', () => {
+            index = i;
+            showSlide(index);
+            resetTimer();
+        });
+        dotsContainer.appendChild(dot);
+    });
+
+    updateDots();
+</script>
+
+</body>
+</html>
